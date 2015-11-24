@@ -12,6 +12,7 @@ stat -input rates.txt -burn 500 -loc $locs
 ```
 
 >Use 'first_column.pl' from https://github.com/lstevison/great-ape-recombination/blob/master/first_column.pl to examine convergence summary
+
 ```
 ./first_column.pl 500 rates.txt bounds.txt consum.$base.txt
 ```
@@ -44,6 +45,7 @@ sed -i 's/chr//g' $base.BED
 
 ####Step5: Get recombination rate averages across 1kb bins from LDhat map
 >Use 'rate_at_hotspots.pl' from https://github.com/lstevison/great-ape-recombination/blob/master/rate_at_hotspots.pl
+
 ```sh
 #input map file from Step3, 1kb bins from Step4, output name, column with coordinates, column with rates, and coordinate format
 ./rate_at_hotspots.pl $base_map.BED $base.BED.binned_by_1kb.txt $base_averaged.txt 0 3 bp
